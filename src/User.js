@@ -1,16 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import User from './src/User';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <User data={{name:'Nazim Khan'}} />
+const User = (props)=>{
+    const {data}= props;
+    return(
+     <View style={styles.container}>
+      <Text style={styles.h1text}>User Component</Text>
+      <Text>{data.name}</Text>
+      <StatusBar style="auto" />
     </View>
-  );
-}
-
+    );
+ }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -29,3 +30,5 @@ const styles = StyleSheet.create({
 
   }
 });
+
+export default User;
